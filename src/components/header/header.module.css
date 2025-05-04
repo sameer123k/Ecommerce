@@ -1,0 +1,28 @@
+:root {
+    --primary: #E74D3D;
+}
+
+.header {
+    background-color: #f0f0f0;
+}
+
+.header ul li {
+    display: inline;
+    padding-right: 10px;
+}
+.header ul li a{
+    text-decoration: none;
+    color: rgb(55, 55, 55);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.header ul li.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.searchBar {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
