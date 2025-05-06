@@ -10,8 +10,25 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../../assets/logo.png';
 import { Button } from '@mui/material';
+import Person3Icon from '@mui/icons-material/Person3';
+import Stack from '@mui/material/Stack';
 // style 
 import Styles from './header.module.css';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: (theme.vars ?? theme).palette.text.secondary,
+    ...theme.applyStyles('dark', {
+        backgroundColor: '#1A2027',
+    }),
+}));
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -56,42 +73,78 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function header() {
     return (
-        <Box className={Styles.header}>
-            <Toolbar>
-                <img src={Logo} alt="logo" height={40} />
-                {/* toggle icon */}
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ display: { xs: 'block', md: 'none' } }}
-                >
-                    <MenuIcon />
-                </IconButton>
+        <>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2} className={Styles.header}>
 
-                <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-                    <ul>
-                        <li className='active'><a href="/">Home</a></li>
-                        <li><a href="#">Men's</a></li>
-                        <li><a href="#">Women's</a></li>
-                        <li><a href="#">Kids</a></li>
-                        <li><a href="#">Beauty</a></li>
-                        <li><a href="#">Genz</a></li>
-                        <li><a href="#">Studio</a></li>
-                    </ul>
-                </Box>
+                    <Grid size={{ xs: 10, md: 10 }}>
+                        <Box> <Toolbar>
+                            <img src={Logo} alt="logo" height={40} />
+                            {/* toggle icon */}
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="open drawer"
+                                sx={{ display: { xs: 'block', md: 'none' } }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
 
-                <Search className={Styles.searchBar}>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Search…"
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
-            </Toolbar>
-        </Box>
+                            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                                <ul>
+                                    <li className='active'><a href="/">Home</a></li>
+                                    <li><a href="#">Men's</a></li>
+                                    <li><a href="#">Women's</a></li>
+                                    <li><a href="#">Kids</a></li>
+                                    <li><a href="#">Beauty</a></li>
+                                    <li><a href="#">Genz</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                </ul>
+                            </Box>
+
+                            <Box sx={{ width: '100%' }}>
+                                <Search className={Styles.SearchBaritem}>
+                                    <SearchIconWrapper>
+                                        <SearchIcon />
+                                    </SearchIconWrapper>
+                                    <StyledInputBase
+                                        placeholder="Search…"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                    />
+                                </Search>
+                            </Box>
+
+                        </Toolbar></Box>
+                    </Grid>
+
+                    <Grid size={{ xs: 2, md: 2 }}>
+
+                        <Toolbar>
+                            {/* profile icons  */}
+                            <Box sx={{ width: '100%' }}>
+                                <Stack direction="row" justifyContent="flex-end" spacing={2}>
+                                    <Box className={Styles.profileIcons}>
+                                        <Person3Icon />
+                                        <a href="#">Profile</a>
+                                    </Box>
+                                    <Box className={Styles.profileIcons}>
+                                        <FavoriteIcon />
+                                        <a href="#">Wishlist</a>
+                                    </Box>
+                                    <Box className={Styles.profileIcons}>
+                                        <AddShoppingCartIcon />
+                                        <a href="#">Cart</a>
+                                    </Box>
+                                </Stack>
+                            </Box>
+                        </Toolbar>
+
+                    </Grid>
+
+                </Grid>
+            </Box>
+
+        </>
     );
 }

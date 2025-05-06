@@ -8,9 +8,10 @@
 
 .header ul li {
     display: inline;
-    padding-right: 10px;
+    padding-right: 20px;
 }
-.header ul li a{
+
+.header ul li a {
     text-decoration: none;
     color: rgb(55, 55, 55);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -22,7 +23,28 @@
     font-weight: 600;
 }
 
-.searchBar {
+.SearchBaritem {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.profileIcons {
+    text-align: center;
+}
+
+.profileIcons span {
+    display: block;
+}
+
+.profileIcons svg {
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.profileIcons a {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
 }
