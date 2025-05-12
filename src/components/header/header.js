@@ -93,13 +93,13 @@ export default function header() {
 
                             <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                                 <ul>
-                                    <li className='active'><a href="/">Home</a></li>
+                                    <li><a className={Styles.active} href="/">Home</a></li>
                                     <li><a href="#">Men's</a></li>
                                     <li><a href="#">Women's</a></li>
                                     <li><a href="#">Kids</a></li>
                                     <li><a href="#">Beauty</a></li>
-                                    <li><a href="#">Genz</a></li>
-                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Electronics</a></li>
+                                    <li><a href="#">Shoes</a></li>
                                 </ul>
                             </Box>
 
@@ -108,10 +108,7 @@ export default function header() {
                                     <SearchIconWrapper>
                                         <SearchIcon />
                                     </SearchIconWrapper>
-                                    <StyledInputBase
-                                        placeholder="Search…"
-                                        inputProps={{ 'aria-label': 'search' }}
-                                    />
+                                    <input type="text" placeholder="Enter Products Here..." />
                                 </Search>
                             </Box>
 
