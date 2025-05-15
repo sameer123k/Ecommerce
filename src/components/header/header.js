@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -72,6 +72,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function header() {
+
+    function showNav() {
+        console.log('jkljjsdfkljsdfjklsdlkj');
+    }
+
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
@@ -81,17 +86,8 @@ export default function header() {
                         <Box> <Toolbar>
                             <img src={Logo} alt="logo" height={40} />
                             {/* toggle icon */}
-                            <IconButton
-                                size="large"
-                                edge="start"
-                                color="inherit"
-                                aria-label="open drawer"
-                                sx={{ display: { xs: 'block', md: 'none' } }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
 
-                            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                            <Box className='Styles.navMenus' sx={{ display: { xs: 'none', md: 'block' } }}>
                                 <ul>
                                     <li><a className={Styles.active} href="/">Home</a></li>
                                     <li><a href="#">Men's</a></li>
@@ -112,6 +108,18 @@ export default function header() {
                                 </Search>
                             </Box>
 
+                            <Box>
+                                <IconButton
+                                    size="large"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    sx={{ display: { xs: 'block', md: 'none', marginLeft: '5px' } }}
+                                    onClick={showNav} >
+                                    <MenuIcon />
+                                </IconButton>
+                            </Box>
+
                         </Toolbar></Box>
                     </Grid>
 
@@ -123,18 +131,11 @@ export default function header() {
                                 <Stack direction="row" justifyContent="flex-end" spacing={2}>
                                     <Box className={Styles.profileIcons}>
                                         <Person3Icon />
-                                        <a href="#">Profile</a>
-                                    </Box>
-                                    <Box className={Styles.profileIcons}>
-                                        <FavoriteIcon />
-                                        <a href="#">Wishlist</a>
-                                    </Box>
-                                    <Box className={Styles.profileIcons}>
-                                        <AddShoppingCartIcon />
-                                        <a href="#">Cart</a>
+                                        <a href="#">Account</a>
                                     </Box>
                                 </Stack>
                             </Box>
+
                         </Toolbar>
 
                     </Grid>

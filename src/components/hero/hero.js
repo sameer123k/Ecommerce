@@ -38,7 +38,7 @@ export default function hero() {
           <Box><img src={Hero2} alt="hero" /></Box>
           <Box><img src={Hero3} alt="hero" /></Box>
           <Box><img src={Hero4} alt="hero" /></Box>
-        </Carousel>;
+        </Carousel>
       </Container>
     </Box >
 
