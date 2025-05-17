@@ -1,0 +1,43 @@
+.Footer {
+    background-color: #333333;
+}
+
+.Footer .footermenu h5 {
+    color: #fff;
+    font-size: 18px;
+    text-align: left;
+}
+
+.Footer .footermenu ul {
+    padding: 0 0 0 15px;
+    list-style-type: square;
+}
+
+.Footer .footermenu ul li {
+    color: #efefef;
+    padding: 3px 0;
+}
+
+.Footer .footermenu ul li a {
+    color: #efefef;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.Footer .footermenu span {
+    color: #efefef;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.Footer .copyright {
+    text-align: center;
+    color: #fff;
+}
+
+.Footer .copyright p {
+    font-size: 14px;
+    background-color: var(--primary);
+    padding: 7px 0;
+    border-radius: 20px;
+}
